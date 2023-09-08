@@ -3,8 +3,8 @@ import "./css/styles.css";
 
 //User Interface Logic~~~~
 function printExchange (exchangeResult) {
-  const currencyValue = document.getElementById("currency-value");
-  currencyValue.innerText = exchangeResult.conversion_rates;
+  console.log(["conversion_rates"]);
+  document.getElementById("currency-value").innerText = `${exchangeResult["conversion_rates"]}`;
 }
 
 

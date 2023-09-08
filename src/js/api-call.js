@@ -7,10 +7,8 @@ export default class CurrencyExchange {
         const response = JSON.parse(this.responseText);
         if (this.status === 200) {
           resolve(response);
-          console.log(response);
         } else {
           reject([response, this]);
-          console.log(response);
         }
       });
       request.open("GET", url, true);
