@@ -1,8 +1,8 @@
-# _Template Title_
+# _Currency Exchanger_
 
 #### By _**Ian Bravo**_
 
-#### _This project ..._
+#### _This project will allow the User to enter any USD value to then have it show the same value in a different currency!_
 
 ## GitHub Page ##
 
@@ -26,16 +26,16 @@ This webpage will ...
 ## Setup/Installation Requirements
 
 Generate an API key for template:
-1. Create an account with template: link
+1. Create an account with template: https://app.exchangerate-api.com/sign-up
 2. Sign-in and click on the API keys tab.
-3. Locate your API key named _Default_. This will be used later in step 7.
+3. Locate your active API key. This will be used later in step 7.
 
 Cloning the Repo:
 1. Open Terminal.
 2. Change your directory to where you would want the cloned directory.
 3. Input the following command into your terminal:  
- _git clone https://github.com/ian-bravo/link_
-4. Navigate to the top level of this newly cloned directory.
+ `git clone https://github.com/ian-bravo/currency_exchanger.git`
+4. Navigate to the top level of this newly cloned directory. _The .gitignore file already has the .env file listed within._
 5. Generate a .env file at the top level of the newly cloned directory; `$ touch .env`
 6. Within the .env file, add the following: `API_KEY=123yourAPIkey456`. Replace "123yourAPIkey456" with your actual API key.
 7. Install all packages with `$ npm install`
