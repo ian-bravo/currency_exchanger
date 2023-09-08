@@ -1,8 +1,16 @@
 import CurrencyExchange from "./js/api-call";
 
 //User Interface Logic~~~~
+function printExchange {
 
-const formSubmitHandler = (event) => {
+};
+
+
+function printErrorExchange(errorExchangeData) {
+  
+};
+
+const handleFormSubmission = (event) => {
   event.preventDefault();
 
   let promise = CurrencyExchange.getExchange(currency);
@@ -15,5 +23,5 @@ const formSubmitHandler = (event) => {
 
 window.addEventListener("load", function () {
   const userInput = document.getElementById("form-input");
-  userInput.addEventListener("submit", formSubmitHandler);
+  userInput.addEventListener("submit", handleFormSubmission);
 });
