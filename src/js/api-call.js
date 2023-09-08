@@ -9,7 +9,7 @@ export default class CurrencyExchange {
           resolve(response);
           console.log(response);
         } else {
-          reject(response);
+          reject([response, this]);
           console.log(response);
         }
       });

@@ -9,8 +9,9 @@ function printExchange (exchangeResult) {
 
 
 function printErrorExchange(errorAPI) {
-  document.getElementById("error-title").innerText = errorAPI.Status;
-  document.getElementById("error-message").innerText = errorAPI["error-type"];
+  document.getElementById("error-title").innerText = `API Error Code: ${errorAPI[1].status}`;
+  document.getElementById("error-message").innerText = `Error: ${errorAPI[0]["error-type"]}`;
+  document.getElementsByClassName("container-error")[0].removeAttribute("class", "hidden");
 }
 
 const handleFormSubmission = (event) => {
@@ -21,7 +22,6 @@ const handleFormSubmission = (event) => {
     printExchange(exchangeData);
     console.log(exchangeData);
   }, function (errorExchangeData) {
-    console.log(errorExchangeData);
     printErrorExchange(errorExchangeData);
   });
 };
