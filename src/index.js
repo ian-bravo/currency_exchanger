@@ -1,14 +1,16 @@
 import CurrencyExchange from "./js/api-call";
+import "./css/styles.css";
 
 //User Interface Logic~~~~
-function printExchange {
+function printExchange (exchangeResult) {
+  const currencyValue = document.getElementById("currency-value");
+  currencyValue.innerText = exchangeResult.conversion_rates;
+}
 
-};
 
-
-function printErrorExchange(errorExchangeData) {
-  
-};
+function printErrorExchange(errorAPI) {
+  document.getElementById("error-message").innerText = errorAPI.error;
+}
 
 const handleFormSubmission = (event) => {
   event.preventDefault();
