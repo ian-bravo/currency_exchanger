@@ -9,16 +9,19 @@ function printExchange (exchangeResult) {
 
 
 function printErrorExchange(errorAPI) {
-  document.getElementById("error-message").innerText = errorAPI.error;
+  document.getElementById("error-title").innerText = errorAPI.Status;
+  document.getElementById("error-message").innerText = errorAPI["error-type"];
 }
 
 const handleFormSubmission = (event) => {
   event.preventDefault();
 
-  let promise = CurrencyExchange.getExchange(currency);
+  let promise = CurrencyExchange.getExchange();
   promise.then(function (exchangeData) {
     printExchange(exchangeData);
+    console.log(exchangeData);
   }, function (errorExchangeData) {
+    console.log(errorExchangeData);
     printErrorExchange(errorExchangeData);
   });
 };
