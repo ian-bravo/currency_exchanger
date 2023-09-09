@@ -3,10 +3,12 @@ import "./css/styles.css";
 
 //User Interface Logic~~~~
 function printExchange (exchangeResult) {
-  console.log(["conversion_rates"]);
-  document.getElementById("currency-value").innerText = `${exchangeResult["conversion_rates"]}`;
+  console.log(exchangeResult["conversion_rates"]["USD"]);
+  document.getElementById("currency-value").innerText = `${exchangeResult["conversion_rates"]["USD"]}`;
+  let userUSDInput = document.getElementById("user-input-USD-number").value;
+  console.log(userUSDInput);
 }
-
+//search the query using ${`thing`}, use switch cases, maybe have this on a separate js file.
 
 function printErrorExchange(errorAPI) {
   document.getElementById("error-title").innerText = `API Error Code: ${errorAPI[1].status}`;
@@ -16,13 +18,12 @@ function printErrorExchange(errorAPI) {
 
 const handleFormSubmission = (event) => {
   event.preventDefault();
-
   let promise = CurrencyExchange.getExchange();
-  promise.then(function (exchangeData) {
-    printExchange(exchangeData);
-    console.log(exchangeData);
-  }, function (errorExchangeData) {
-    printErrorExchange(errorExchangeData);
+  promise.then(function (exchangeDataArray) {
+    printExchange(exchangeDataArray);
+    console.log(exchangeDataArray);
+  },function (errorArray) {
+    printErrorExchange(errorArray);
   });
 };
 
