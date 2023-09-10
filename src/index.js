@@ -3,12 +3,30 @@ import "./css/styles.css";
 
 //User Interface Logic~~~~
 function printExchange (exchangeResult) {
-  console.log(exchangeResult["conversion_rates"]["USD"]);
-  document.getElementById("currency-value").innerText = `${exchangeResult["conversion_rates"]["USD"]}`;
   let userUSDInput = document.getElementById("user-input-USD-number").value;
-  console.log(userUSDInput);
+  let userCurrencyType = document.getElementById("user-select-currency-type").value;
+  let currency = userCurrencyType;
+  switch (currency) {
+    case ("EUR"):
+      document.getElementById("currency-value").innerText = exchangeResult["conversion_rates"]["EUR"] * userUSDInput + " Euros";
+      break;
+    case ("GBP"):
+      document.getElementById("currency-value").innerText = exchangeResult["conversion_rates"]["GBP"] * userUSDInput + " Pounds";
+      break;
+    case ("JPY"):
+      document.getElementById("currency-value").innerText = exchangeResult["conversion_rates"]["JPY"] * userUSDInput + " Yen";
+      break;
+    case ("KRW"):
+      document.getElementById("currency-value").innerText = exchangeResult["conversion_rates"]["KRW"] * userUSDInput + " Won";
+      break;
+    case ("CNY"):
+      document.getElementById("currency-value").innerText = exchangeResult["conversion_rates"]["CNY"] * userUSDInput + " Yuan";
+      break;
+    default:
+      return document.getElementById("currency-value").innerText = "Woops, please enter a 3 letter currency type from one of the listed options above, i.e. EUR ."
+  }
+  document.getElementsByClassName("container-result")[0].removeAttribute("class", "hidden");
 }
-//search the query using ${`thing`}, use switch cases, maybe have this on a separate js file.
 
 function printErrorExchange(errorAPI) {
   document.getElementById("error-title").innerText = `API Error Code: ${errorAPI[1].status}`;
