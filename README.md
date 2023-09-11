@@ -6,7 +6,7 @@
 
 ## GitHub Page ##
 
-https://ian-bravo.github.io/template/
+https://ian-bravo.github.io/currency_exchanger/
 
 
 ## Technologies Used
@@ -16,19 +16,19 @@ https://ian-bravo.github.io/template/
 * _JavaScript_
 * _npm v9.6.7_
 * _node v18.17.1_
-* _API_
+* _exchange rate API_
 
 
 ## Description
 
-This webpage will ... 
+This project will take the User's input and return the same value in various different currencies. This project utilizes an exchange rate API.
 
 ## Setup/Installation Requirements
 
 Generate an API key for template:
-1. Create an account with template: https://app.exchangerate-api.com/sign-up
+1. Create an account at: https://app.exchangerate-api.com/sign-up
 2. Sign-in and click on the API keys tab.
-3. Locate your active API key. This will be used later in step 7.
+3. Locate your active API key. This will be used later in step 6.
 
 Cloning the Repo:
 1. Open Terminal.
@@ -42,7 +42,6 @@ Cloning the Repo:
 8. Build the project using webpack with `$ npm run build`
 9. Start a development server with `$ npm run start`
 10. Lint JS files in the src folder with `$ npm run lint`
-11. Run tests with Jest using `$ npm run test`
 
 
 ## Known Bugs
@@ -54,7 +53,7 @@ Cloning the Repo:
 
 MIT License  
 
-Copyright (c) dd-Mon-yyyy Ian Bravo  
+Copyright (c) 08-Sep-2023 Ian Bravo  
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:  
 
