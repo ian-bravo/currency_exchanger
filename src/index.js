@@ -40,6 +40,8 @@ const handleFormSubmission = (event) => {
   },function (errorArray) {
     printErrorExchange(errorArray);
   });
+  // .catch((error) => {
+  // });
 };
 
 window.addEventListener("load", function () {

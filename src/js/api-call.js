@@ -4,11 +4,16 @@ export default class CurrencyExchange {
       let request = new XMLHttpRequest();
       const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`;
       request.addEventListener("loadend", function () {
-        const response = JSON.parse(this.responseText);
-        if (this.status === 200) {
-          resolve(response);
-        } else {
-          reject([response, this]);
+        try {
+          const response = JSON.parse(this.responseText);
+          if (this.status === 200) {
+            resolve(response);
+          } else {
+            reject([response, this]);
+          }
+        } catch(error) {
+          document.getElementById("error-title").innerText = "404 not found";
+          // throw new Error("404 not found"); also remove v6's.
         }
       });
       request.open("GET", url, true);
